@@ -56,6 +56,8 @@ jobs:
       - name: Commit and Push changes
         run: |
           cd web-page
+          git init
+          git checkout -b gh-pages
           git add .
           git commit -m "Automated deployment to GitHub Pages by GitHub Actions" || echo "No changes to commit" # Handle no changes
           git push origin gh-pages --force #force solves conflict
