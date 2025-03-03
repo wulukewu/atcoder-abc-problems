@@ -60,10 +60,10 @@ jobs:
           git commit -m "Automated deployment to GitHub Pages by GitHub Actions" || echo "No changes to commit" # Handle no changes
           git push origin gh-pages --force #force solves conflict
 
-      # - name: Deploy to GitHub Pages (Alternative, if the above fails)
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: web-page
-      #     publish_branch: gh-pages
-      #     force_orphan: true
+      - name: Deploy to GitHub Pages (Alternative, if the above fails)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: web-page
+          publish_branch: gh-pages
+          force_orphan: true
